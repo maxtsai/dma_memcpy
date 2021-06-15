@@ -1,0 +1,34 @@
+diff --git a/arch/arm64/boot/dts/freescale/imx8mp-evk.dts b/arch/arm64/boot/dts/freescale/imx8mp-evk.dts
+index 03d555dd67bb..295a89f150a4 100644
+--- a/arch/arm64/boot/dts/freescale/imx8mp-evk.dts
++++ b/arch/arm64/boot/dts/freescale/imx8mp-evk.dts
+@@ -34,6 +34,11 @@ memory@40000000 {
+ 		      <0x1 0x00000000 0 0xc0000000>;
+ 	};
+ 
++    reserved-driver {
++        compatible = "dmacpy,reserved-memory";
++        memory-region = <&dma_reserved>;
++    };
++
+ 	reg_can1_stby: regulator-can1-stby {
+ 		compatible = "regulator-fixed";
+ 		regulator-name = "can1-stby";
+diff --git a/arch/arm64/boot/dts/freescale/imx8mp.dtsi b/arch/arm64/boot/dts/freescale/imx8mp.dtsi
+index 39490274e6f0..a4aee687df7a 100644
+--- a/arch/arm64/boot/dts/freescale/imx8mp.dtsi
++++ b/arch/arm64/boot/dts/freescale/imx8mp.dtsi
+@@ -195,6 +195,13 @@ dsp_reserved: dsp@92400000 {
+ 			no-map;
+ 			reg = <0 0x92400000 0 0x2000000>;
+ 		};
++
++        dma_reserved: buffer@C0000000 {
++			compatible = "shared-dma-pool";
++            no-map;
++			reg = <0 0xC0000000 0 0x2000000>;
++        };
++
+ 	};
+ 
+ 	osc_32k: clock-osc-32k {
