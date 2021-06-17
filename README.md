@@ -9,11 +9,9 @@ Simple dma exmaple.
 
 Usage
 1. insmod dmacpy_drv.ko
-2. show src and dst buffers 
-   -> cat /sys/module/dmacpy_drv/parameters/show
+2. show src and dst buffers. ->  "cat /sys/module/dmacpy_drv/parameters/show"
 3. execute test app which random overide src and dst buffer
-4. trigger dma copy
-   -> echo 1 > /sys/module/dmacpy_drv/parameters/dmacpy
+4. trigger dma copy. -> "echo 1 > /sys/module/dmacpy_drv/parameters/dmacpy"
 
 
 
