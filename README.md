@@ -18,8 +18,8 @@ Usage
 
 
 file list
-├── dmacpy_user_test.c
-├── dmacpy_drv.c
-├── kernel_5.10.9_reserved_mem.patch
-├── Makefile
-└── readme.txt
+- dmacpy_user_test.c
+- dmacpy_drv.c
+- kernel_5.10.9_reserved_mem.patch
+- Makefile
+- readme.txt
